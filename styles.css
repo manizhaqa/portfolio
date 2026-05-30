@@ -76,17 +76,18 @@ a:hover {
 
 .hero {
   max-width: 1120px;
-  min-height: 76vh;
+  min-height: 72vh;
   margin: 0 auto;
   padding: 88px 24px 48px;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
   gap: 42px;
   align-items: center;
 }
 
 .hero h1,
 .section h2,
+.about-section h2,
 .article h1,
 .article h2 {
   margin: 0;
@@ -142,7 +143,7 @@ a:hover {
   color: var(--accent-dark);
 }
 
-.hero-panel,
+.portrait-panel,
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -150,36 +151,105 @@ a:hover {
   box-shadow: 0 22px 70px rgba(39, 47, 42, 0.08);
 }
 
-.hero-panel {
-  padding: 28px;
+.portrait-panel {
+  padding: 18px;
 }
 
 .profile-photo {
-  width: 132px;
-  height: 132px;
-  margin-bottom: 22px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   display: block;
-  border: 4px solid var(--soft);
-  border-radius: 50%;
+  border-radius: 6px;
   object-fit: cover;
 }
 
-.hero-panel h2,
+.portrait-panel p {
+  margin: 14px 4px 2px;
+  color: var(--muted);
+  font-weight: 750;
+}
+
 .card h3 {
   margin: 0;
   line-height: 1.2;
 }
 
-.hero-panel ul,
 .columns ul {
   margin: 18px 0 0;
   padding-left: 20px;
 }
 
-.hero-panel li,
 .columns li,
 .article li {
   margin: 10px 0;
+}
+
+.about-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+  gap: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.about-copy h2,
+.section h2,
+.article h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.about-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.about-list {
+  padding: 30px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.about-list h3 {
+  margin: 0 0 18px;
+  font-size: 1.4rem;
+}
+
+.about-list ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.about-list li {
+  margin: 14px 0;
+  padding-left: 6px;
+  font-weight: 700;
+}
+
+.focus-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.focus-strip div {
+  padding-right: 20px;
+}
+
+.focus-strip span {
+  display: block;
+  color: var(--warm);
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.focus-strip p {
+  margin: 8px 0 0;
+  color: var(--muted);
 }
 
 .section {
@@ -192,11 +262,6 @@ a:hover {
 .section-heading {
   max-width: 720px;
   margin-bottom: 28px;
-}
-
-.section h2,
-.article h1 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
 }
 
 .split,
@@ -317,6 +382,8 @@ a:hover {
 @media (max-width: 860px) {
   .nav,
   .hero,
+  .about-section,
+  .focus-strip,
   .split,
   .ai-section,
   .columns,
